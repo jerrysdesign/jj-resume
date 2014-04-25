@@ -21,3 +21,25 @@ $page-container: ".page";
 @import "typography";
 @import "layout";
 @import "pages";
+
+body {
+  overflow-x: hidden;
+}
+
+[class^="section-"] {
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+h1.section-heading {
+  margin: 0px;
+  font-family: 'Raleway',sans-serif;
+  font-size: 4em;
+  font-weight: 900;
+  background-color: $defaultColor;
+  padding: 10px 30px;
+  @include border-radius(4px);
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+}
