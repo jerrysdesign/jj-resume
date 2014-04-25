@@ -21,3 +21,7 @@ $page-container: ".page";
 @import "typography";
 @import "layout";
 @import "pages";
+
+body {
+  overflow-x: hidden;
+}
