@@ -9,9 +9,6 @@ $phone          : $total-columns;
 $pad            : 8;
 $desktop        : 12;
 
-// debug
-@import "layout-debug";
-
 #{$page-container} {
   @include container($phone, $pad, $desktop);
 }

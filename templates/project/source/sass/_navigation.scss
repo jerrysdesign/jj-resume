@@ -1,0 +1,68 @@
+
+.navigation {
+  background-color: #424242;
+  .navbar {
+    margin-bottom: 0px;
+  }
+  .nav > li > a {
+    padding: 0px 15px;
+  }
+  ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    > li {
+      font-size: 14px;
+      color: #FFF;
+    }
+    &.nav > li > a {
+      height: 100px;
+      display: inline-block;
+      line-height: 100px;
+      text-shadow: none;
+      color: #FFF;
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 0px;
+      outline: none;
+    }
+    li {
+      &.current > a {
+        background-color: #353535;
+        color: $defaultColor;
+      }
+      a {
+        &:hover, &:focus, &:active {
+          background-color: #353535;
+          color: $defaultColor;
+        }
+      }
+    }
+  }
+  &.sticky-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+    top: 0;
+    ul.nav > li > a {
+      height: 50px;
+      display: inline-block;
+      line-height: 50px;
+    }
+  }
+}
+
+.sticky-logo {
+  @include transform(rotate(355deg));
+  line-height: 100px;
+  img {
+    height: 35px;
+  }
+}
+
+.navigation.sticky-nav .sticky-logo {
+  line-height: 50px;
+  img {
+    height: 35px;
+  }
+}
