@@ -157,6 +157,7 @@
   .reddot {
     position: absolute;
     top: -15px;
+    margin-left: -15px;
     left: 50%;
   }
   .right-dot {
@@ -192,6 +193,35 @@
 }
 
 @media (max-width: 479px) {
+  .form-container {
+    padding: 20px 20px 50px 20px;
+    p:nth-child(odd){
+      display: none;
+    }
+  }
+
+  .iamnotfatcat {
+    h3 {
+      font-size: 36px;
+      width: 100%;
+      position: absolute;
+      bottom: 60px;
+      text-align: center;
+    }
+  }
+  #awards-carousel {
+    min-width: 218px;
+  }
+  .connect-section {
+    padding-bottom: 0;
+  }
+  .awards-thumb {
+    min-width: 218px;
+    margin: 10px auto;
+  }
+  .quote {
+    font-size: 1.2em;
+  }
   .timeline-divider, .experience-timeline:before {
     display: none;
   }
@@ -244,6 +274,9 @@
       line-height: 25px;
       padding: 10px;
     }
+  }
+  ul.tool {
+    padding: 0 10px;
   }
   .arrow-left {
     display: none;
@@ -314,6 +347,9 @@
         .years {
           display: none;
         }
+        .associations {
+          padding: 15px;
+        }
       }
       &:nth-child(even) {
         .timeline-marker {
@@ -342,10 +378,16 @@
         .years {
           display: none;
         }
+        .associations {
+          padding: 15px;
+        }
       }
       .timeline-marker {
         float: none !important;
       }
+    }
+    .row + .row {
+      margin-top: 20px;
     }
   } 
   .experience-timeline .right {
@@ -392,10 +434,33 @@
     float: left;
     margin-bottom: 5px;
   }
+  .iamnotfatcat {
+    height: 320px;
+  }
+  .contact-header {
+
+    .title {
+      text-align: center;
+      line-height: 1.5;
+      i {
+        display: inline-block;
+        margin: 5px auto;
+      }
+      span {
+        display: block;
+      }
+    }
+  }
 }
 
 @media (max-width: 567px) {
   .mega-entry {
     height: 300px !important;
+  //   border: 10px solid #ccc;
+  //   margin-top: 0;
+  // }
+  // .mega-entry + .mega-entry {
+  //   margin-top: 20px;
+  //   margin-bottom: 20px;
   }
 }
