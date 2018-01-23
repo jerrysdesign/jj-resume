@@ -1,2 +1,30 @@
-templates/project/source/.sass-cache/**/*
-*.DS_Store
+#=========================
+# OS generated files
+#=========================
+.DS_Store
+.DS_Store?
+*.swp
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+#=========================
+**/.DS_Store
+
+#=========================
+# source
+#=========================
+psd/
+#=========================
+
+
+#=========================
+# fire.app
+#=========================
+templates/project/source/.scssc
+templates/project/source/.sass-cache
+templates/project/source/fire_app_log.txt
+templates/project/source/.coffeescript-cache/**/*
+#=========================
