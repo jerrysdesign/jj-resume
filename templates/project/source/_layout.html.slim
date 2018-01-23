@@ -1,0 +1,26 @@
+/!  Sources and Credits
+/!
+/!  Bootstrap         http://twitter.github.com/bootstrap
+/!  Mega Folio        http://codecanyon.net/item/megafolio-pro-responsive-grid-jquery-plugin/3782456
+/!  Slider Revolution http://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380
+/!  Royal Preloader   http://goo.gl/28RSme
+/!
+/!  Font Awsome       http://fortawesome.github.io/Font-Awesome/
+/!
+/!         d d sss   d ss.  d ss.  Ss   sS      d    d d       b d s  b   sSSSs   
+/!         S S       S    b S    b   S S        S    S S       S S  S S  S     S  
+/!         S S       S    P S    P    S         S    S S       S S   SS S         
+/!         S S sSSs  S sS'  S sS'     S         S sSSS S       S S    S S         
+/! d       P S       S   S  S   S     S         S    S S       S S    S S    ssSb 
+/!  S     S  S       S    S S    S    S         S    S  S     S  S    S  S     S  
+/!   "sss"   P sSSss P    P P    P    P         P    P   "sss"   P    P   "sss"   
+                                                                               
+doctype 5
+html lang="zh-TW"
+  head
+    = render "/layout_head"
+    /= render "/layout_og"
+  body.royal_loader
+    = yield
+    = render "/layout_foot"
+    = render "/layout_livereload"

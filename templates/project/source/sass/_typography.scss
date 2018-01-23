@@ -1,0 +1,22 @@
+%helvetica-light {
+  font-family: HelveticaNeue-Light, Helvetica, Arial, xingothic-tc-w3, sans-serif;
+  font-weight: 300;
+}
+
+body {
+  @extend %helvetica-light;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.hide {
+  display: none;
+}
+
+a,a:hover,a:focus {
+  @include link-colors($defaultColor);
+  outline: none;
+  text-decoration: none;
+  @include transition(all 0.3s);
+}
