@@ -25,7 +25,9 @@ $page-container: ".page";
 body {
   overflow-x: hidden;
 }
-
+img {
+  max-width: 100%;
+}
 [class^="section-"] {
   padding-top: 80px;
   overflow: hidden;
