@@ -1,8 +1,4 @@
-site-url: "http://localhost:3000"
+site-url: "http://just-hire.me"
 site-title: "未命名頁面"
 site-name: "未命名網站"
 site-description: "尚未填寫敘述"
-
-og-type: "website"
-og-image: "http://localhost:3000/fb.png"
-fb-admins: "123456"

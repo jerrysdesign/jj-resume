@@ -19,18 +19,17 @@ body {
 }
 // import all things
 @import "compass";
-@import "susy";
-
+// @import "susy";
 @import "normalize";
 // @include establish-baseline;
 
 @import "colors";
 @import "setting";
 @import "typography";
-@import "layout";
-@import "pages";
+// @import "layout";
 
 body {
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 img {
@@ -57,3 +56,16 @@ img {
 @import "owl.transitions";
 @import "font-awesome";
 @import "superfish";
+
+h1.section-heading {
+  margin: 0px;
+  font-family: 'Raleway',sans-serif;
+  font-size: 4em;
+  font-weight: 900;
+  background-color: $defaultColor;
+  padding: 10px 30px;
+  @include border-radius(4px);
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+}
