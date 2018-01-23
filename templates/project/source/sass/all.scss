@@ -21,3 +21,12 @@ $page-container: ".page";
 @import "typography";
 @import "layout";
 @import "pages";
+
+body {
+  overflow-x: hidden;
+}
+
+[class^="section-"] {
+  padding-top: 80px;
+  overflow: hidden;
+}

@@ -20,9 +20,11 @@ body {
   @extend %helvetica-light;
 }
 
-a {
-  @include link-colors(blue);
-  @include hover-link;
+a,a:hover,a:focus {
+  @include link-colors($defaultColor);
+  outline: none;
+  text-decoration: none;
+  @include transition(all 0.3s);
 }
 
 p {
