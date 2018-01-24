@@ -8,29 +8,39 @@ var gulp        = require('gulp'),
     cssnano     = require('gulp-cssnano'),
     sourcemaps  = require('gulp-sourcemaps'),
     imagemin    = require('gulp-imagemin');
+    npmDist     = require('gulp-npm-dist');
 
 var cfg = {
   'src': 'src/',
   'build': 'dist/'
 }
 
+gulp.task('copy:vendors', function() {
+  gulp.src(npmDist(), {base:'./node_modules'})
+    .pipe(gulp.dest(cfg.src + 'vendors'));
+});
+
+gulp.task('copy:build', function () {
+  gulp.src(cfg.src + 'vendors'+ '/**/*')
+    .pipe(gulp.dest(cfg.build + 'vendors' + '/'));
+});
 
 gulp.task('styles', function(){
   gulp.src(cfg.src + 'sass/*.scss')
     .pipe(plumber())
     .pipe(sourcemaps.init())
-      .pipe(sass())
+    .pipe(sass())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(cfg.build + 'css/'));
 });
 
 gulp.task('views', function buildHTML() {
   gulp.src(cfg.src + 'pug/*.pug')
-  .pipe(plumber())
-  .pipe(pug({
-    pretty: true
-  }))
-  .pipe(gulp.dest(cfg.build));
+    .pipe(plumber())
+    .pipe(pug({
+      pretty: true
+    }))
+    .pipe(gulp.dest(cfg.build));
 });
 
 gulp.task('js', function () {
@@ -45,7 +55,7 @@ gulp.task('image-min', function(){
     .pipe(gulp.dest(cfg.build + 'images'));
 });
 
-gulp.task('serve', ['styles', 'views', 'js', 'image-min'], function() {
+gulp.task('serve', ['styles', 'views', 'js', 'image-min', 'copy:vendors'], function() {
   browserSync.init({
     server: {
       baseDir: cfg.build
@@ -57,7 +67,6 @@ gulp.task('serve', ['styles', 'views', 'js', 'image-min'], function() {
   gulp.watch(cfg.src + 'img/**/*', ['image-min']).on('change', browserSync.reload);
   // gulp.watch('app/dist/**/*').on('change', browserSync.reload);
 });
-
 
 gulp.task('js-min', function(){
   gulp.src(cfg.build + 'scripts/*.js')
@@ -71,8 +80,8 @@ gulp.task('css-min', function(){
     .pipe(gulp.dest(cfg.build + 'css'));
 });
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['copy:vendors', 'serve']);
 
-gulp.task('build', ['styles', 'views', 'js', 'image-min', 'js-min', 'css-min']);
+gulp.task('copy', ['copy:vendors', 'copy:build']);
 
-  // .pipe(browserSync.reload({stream: true}))
+gulp.task('build', ['copy', 'styles', 'views', 'js', 'image-min', 'js-min', 'css-min']);
