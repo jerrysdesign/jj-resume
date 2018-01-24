@@ -6,7 +6,7 @@ var gulp        = require('gulp'),
     watch       = require('gulp-watch'),
     uglify      = require('gulp-uglify'),
     cssnano     = require('gulp-cssnano'),
-    sourcemaps      = require('gulp-sourcemaps'),
+    sourcemaps  = require('gulp-sourcemaps'),
     imagemin    = require('gulp-imagemin');
 
 var cfg = {
@@ -40,7 +40,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('image-min', function(){
-  gulp.src(cfg.src + 'img/*')
+  gulp.src(cfg.src + 'img/**/*')
     .pipe(imagemin())
     .pipe(gulp.dest(cfg.build + 'images'));
 });
