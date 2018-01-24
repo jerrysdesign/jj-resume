@@ -73,6 +73,6 @@ gulp.task('css-min', function(){
 
 gulp.task('default', ['serve']);
 
-gulp.task('build', ['image-min', 'js-min', 'css-min']);
+gulp.task('build', ['styles', 'views', 'js', 'image-min', 'js-min', 'css-min']);
 
   // .pipe(browserSync.reload({stream: true}))
