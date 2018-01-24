@@ -1,0 +1,108 @@
+.section-education {
+  background-color: #f1f1f1;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.education {
+  min-height: 120px;
+  margin-bottom: 32px;
+}
+
+.section-education {
+  .details {
+    width: 39%;
+    float: left;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+    z-index: 100;
+    display: table;
+  }
+  .year {
+    background-color: #424242;
+    height: 120px;
+    border-radius: 5px;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    float: left;
+    width: 20%;
+    z-index: 500;
+    position: relative;
+    display: table;
+    h2 {
+      color: #fff;
+      font-size: 17px;
+      margin-top: 22%;
+      text-align: center;
+    }
+  }
+}
+
+.reddot {
+  height: 30px;
+  width: 30px;
+  background-color: #fa6862;
+  border: 5px solid #fff;
+  border-radius: 15px;
+  position: absolute;
+}
+
+.left-dot {
+  left: -15px;
+  top: 44px;
+}
+
+.right-dot {
+  top: 44px;
+  right: -15px;
+}
+
+.details.higherz {
+  z-index: 300;
+}
+.education {
+  .content {
+    h2 {
+      padding: 0px;
+      margin: 0px;
+      color: #424242;
+      font-size: 19px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    p {
+      padding: 0px;
+      margin: 0px;
+      color: #999;
+      font-size: 14px;
+      font-weight: 200;
+      letter-spacing: 0.5;
+      line-height: 24px;
+    }
+    top: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+
+.details.higherz .content {
+  padding-left: 15px;
+}
+
+.year .content {
+  padding: 0px;
+  text-align: center;
+  h2 {
+    color: #fff;
+    padding: 0px;
+    font-size: 17px;
+    margin-right: 20px;
+    padding-top: 7px;
+    letter-spacing: 1;
+  }
+}
