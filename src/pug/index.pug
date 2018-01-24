@@ -1,8 +1,13 @@
-extends partails/base
-include partails/nav
+extends layout/_layout
 
 block content
-  +nav
-  div.center
-    h1 jj start 123
-    p Hollo world.
+  include partails/_home
+  include partails/_navigation
+  include partails/_about
+  include partails/_skill
+  include partails/_experiences
+  include partails/_education
+  include partails/_portfolio
+  include partails/_awards
+  include partails/_connect
+  include partails/_contact
