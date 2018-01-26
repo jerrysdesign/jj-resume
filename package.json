@@ -10,10 +10,11 @@
   "license": "",
   "homepage": "",
   "devDependencies": {
+    "bower": "^1.8.2",
     "browser-sync": "~2.12.8",
     "compass-mixins": "^0.12.10",
-    "gulp": "~3.9.0",
-    "gulp-cssnano": "~2.1.2",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.2",
     "gulp-imagemin": "3.0.1",
     "gulp-npm-dist": "^0.1.6",
     "gulp-plumber": "1.1.0",
