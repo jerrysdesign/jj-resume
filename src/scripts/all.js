@@ -38,7 +38,6 @@
       });
 
       $('.navigation').waypoint('sticky', {
-
         stuckClass: 'sticky-nav'
       });
 
@@ -58,7 +57,7 @@
         animationOutSpeed: 200, // Animation out speed (ms)
         scrollText: '<i class="fa fa-angle-double-up"></i>' // Text for element
       });
-      $(' #scrollUp').smoothScroll({
+      $('#scrollUp').smoothScroll({
         offset: -80,
         easing: 'easeInExpo',
         speed: 500,
