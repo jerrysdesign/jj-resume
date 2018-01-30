@@ -10,12 +10,12 @@
   "license": "",
   "homepage": "",
   "devDependencies": {
+    "bower": "^1.8.2",
     "browser-sync": "~2.12.8",
     "compass-mixins": "^0.12.10",
     "gulp": "~3.9.0",
     "gulp-cssnano": "~2.1.2",
     "gulp-imagemin": "3.0.1",
-    "gulp-npm-dist": "^0.1.6",
     "gulp-plumber": "1.1.0",
     "gulp-pug": "^2.0.0",
     "gulp-sass": "^2.3.2",
@@ -25,6 +25,5 @@
     "susy": "^2.2.12"
   },
   "dependencies": {
-    "bootstrap": "3.1.1"
   }
 }
