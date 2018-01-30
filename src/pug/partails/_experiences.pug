@@ -1,3 +1,46 @@
+mixin experience-item-first(company, title, date, year, content)
+  .col-md-6.col-xs-6.mobile-view
+    .timeline-divider.wow.bounceIn
+      i.fa.fa-check
+    .timeline-marker.wow.slideInLeft
+      .timeline-date #{date}
+      .years #{year}
+      .arrow-right
+  .col-md-6.col-xs-6.mobile-view
+    .timeline-details.wow.slideInRight
+      .associations
+        h2.associations-heading #{company}
+        h3.associations-subheading #{title}
+        p #{content}
+mixin experience-item-left(company, title, date, year, content)
+  .col-md-6.col-xs-6.mobile-view
+    .timeline-divider.wow.bounceIn
+      i.fa.fa-times
+    .timeline-marker.wow.slideInLeft
+      .timeline-date #{date}
+      .years #{year}
+      .arrow-right
+  .col-md-6.col-xs-6.mobile-view
+    .timeline-details.wow.slideInRight
+      .associations
+        h2.associations-heading #{company}
+        h3.associations-subheading #{title}
+        p #{content}
+mixin experience-item-right(company, title, date, year, content)
+  .col-md-6.col-xs-6.mobile-view
+    .timeline-divider.wow.bounceIn
+      i.fa.fa-times
+    .timeline-details.wow.slideInLeft
+      .associations
+        h2.associations-heading #{company}
+        h3.associations-subheading #{title}
+        p #{content}
+  .col-md-6.col-xs-6.mobile-view
+    .timeline-marker.wow.slideInRight
+      .timeline-date #{date}
+      .years #{year}
+      .arrow-left
+
 #experiences.section-experience
   .container
     .row
@@ -7,100 +50,20 @@
           h2.section-subheading-nobg 人都是經驗的動物，但是經過同樣的事件後，往往得到的領悟卻大大不同
     .experience-timeline
       .row.first
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-divider.wow.bounceIn
-            i.fa.fa-check
-          .timeline-marker.wow.slideInLeft
-            .timeline-date OCT 2012 - TILL TODAY
-            .years 1y7m
-            .arrow-right
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-details.wow.slideInRight
-            .associations
-              h2.associations-heading Passion Bean LAB
-              h3.associations-subheading Web Designer
-              p 網頁設計開發（含行動裝置），社群、粉絲團操作，facebook廣告投放、操作、分析
+        +experience-item-first('Cepave', 'Sr. Desiner(Manager) / 管理人數: 3', 'AUG 2015 - TILL TODAY', '1y7m', '第一次擔任管理職務，終於體會到什麼是夾心餅乾，發現想像與現實完全是兩回事。如何維繫一個團隊的士氣，確保整體進度的順遂，無時充滿了挑戰。順利的完成招募組成工作，團隊文化的建立與工作流程制定及跨部門協調，都是一個全新的體驗。')
       .row
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-divider.wow.bounceIn
-            i.fa.fa-times
-          .timeline-details.wow.slideInLeft
-            .associations
-              h2.associations-heading Flysheet Information
-              h3.associations-subheading Sr. Web Designer
-              p 負責項目為各大學院校、醫院、政府單位與圖書館，碩博士論文系統，資料庫檢索系統、入口網站...等網站設計，檢索介面開發，與公司行政與業務單位之平面設計製作物：印刷品、包裝、型錄、刊物、CD、海報、活動背板、E-DM...等美術編輯。
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-marker.wow.slideInRight
-            .timeline-date FEB 2003 - OCT 2012
-            .years 8y7m
-            .arrow-left
+        +experience-item-right('SHUTTLE INC.', 'Sr. Web Designer', 'FEB 2014 - OCT 2015', '11m', '這是一個非常快樂的團隊，健全的 ui/ux 部門編制，讓我從同事與主管身上學習到很多專業的知識與觀念。在職期間發會所長順利了執行了幾個專案任務。也可以貢獻自己的專長，提昇同事的技能')
       .row
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-divider.wow.bounceIn
-            i.fa.fa-times
-          .timeline-marker.wow.slideInLeft
-            .timeline-date DEC 2002 - FEB 2003
-            .years 3m
-            .arrow-right
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-details.wow.slideInRight
-            .associations
-              h2.associations-heading 英象有限公司
-              h3.associations-subheading Designer
-              p 營業項目為qMan公仔，負責包裝設計、發包，平面美術設計，網頁設計，公仔球員卡設計...等，VI 規劃設計。目前該業務已中止。
+        +experience-item-left('Passion Bean LAB', 'Web Designer', 'DEC 2012 - FEB 2014', '1y7m', '網頁設計開發（含行動裝置），社群、粉絲團操作，facebook廣告投放、操作、分析')
       .row
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-divider.wow.bounceIn
-            i.fa.fa-times
-          .timeline-details.wow.slideInLeft
-            .associations
-              h2.associations-heading 飛翼國際有限公司
-              h3.associations-subheading Web Designer
-              p 為旅遊業，負責公司網站架設，行程景點網頁設計。會員刊物，美術編輯，平面設計...等。目前公司已結束營業。
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-marker.wow.slideInRight
-            .timeline-date OCT 2002 - NOV 2003
-            .years 1y1m
-            .arrow-left
+        +experience-item-right('Flysheet Information', 'Sr. Web Designer', 'FEB 2003 - OCT 2012', '9y6m', '負責項目為各大學院校、醫院、政府單位與圖書館，碩博士論文系統，資料庫檢索系統、入口網站...等網站設計，檢索介面開發，與公司行政與業務單位之平面設計製作物：印刷品、包裝、型錄、刊物、CD、海報、活動背板、E-DM...等美術編輯。')
       .row
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-divider.wow.bounceIn
-            i.fa.fa-times
-          .timeline-marker.wow.slideInLeft
-            .timeline-date SEP 2000 - OCT 2002
-            .years 2y1m
-            .arrow-right
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-details.wow.slideInRight
-            .associations
-              h2.associations-heading 視覺開發廣告事業有限公司
-              h3.associations-subheading Designer
-              p 平面美術設計、客戶檔案轉換、完稿。大圖輸出與後製作加工，場佈。目前公司已中止。
+        +experience-item-left('英象有限公司', 'Designer', 'DEC 2002 - FEB 2003', '3m', '營業項目為qMan公仔，負責包裝設計、發包，平面美術設計，網頁設計，公仔球員卡設計...等，VI 規劃設計。目前該業務已中止。')
       .row
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-divider.wow.bounceIn
-            i.fa.fa-times
-          .timeline-details.wow.slideInLeft
-            .associations
-              h2.associations-heading 金衡企業股份有限公司
-              h3.associations-subheading Designer
-              p 負責禮品出口業務，負責處理國外設計圖稿與自有產品開發、設計。目前該業務已中止。
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-marker.wow.slideInRight
-            .timeline-date JAN 2000 - SEP 2000
-            .years 9m
-            .arrow-left
+        +experience-item-right('飛翼國際有限公司', 'Web Designer', 'OCT 2002 - NOV 2003', '1y1m', '為旅遊業，負責公司網站架設，行程景點網頁設計。會員刊物，美術編輯，平面設計...等。目前公司已結束營業。')
       .row
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-divider.wow.bounceIn
-            i.fa.fa-times
-          .timeline-marker.wow.slideInLeft
-            .timeline-date JUL 1997 - JAN 1998
-            .years 6m
-            .arrow-right
-        .col-md-6.col-xs-6.mobile-view
-          .timeline-details.wow.slideInRight
-            .associations
-              h2.associations-heading 特選有限公司
-              h3.associations-subheading 美工
-              p 為台灣最專業的聖誕飾品公司，負責大型聖誕樹工程，LED燈，社區佈置，設計規劃施工。
+        +experience-item-left('視覺開發廣告事業有限公司', 'Designer', 'SEP 2000 - OCT 2002', '2y1m', '平面美術設計、客戶檔案轉換、完稿。大圖輸出與後製作加工，場佈。目前公司已中止。')
+      .row
+        +experience-item-right('金衡企業股份有限公司', 'Designer', 'JAN 2000 - SEP 2000', '9m', '負責禮品出口業務，負責處理國外設計圖稿與自有產品開發、設計。目前該業務已中止。')
+      .row
+        +experience-item-left('特選有限公司', '美工', 'JUL 1997 - JAN 1998', '9m', '為台灣最專業的聖誕飾品公司，負責大型聖誕樹工程，LED燈，社區佈置，設計規劃施工。')
