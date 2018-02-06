@@ -1,121 +1,90 @@
+- var filePath = 'images/portfolio/'
+mixin img(src)
+  img(src=src)
+mixin demo(href)
+  a(target="_blank" href=href)
+    .mega-hoverview
+mixin modal-contant-img(grid1)
+  div(class=grid1)
+    .modal-img.bg-b
+      if block
+        block
+mixin modal-contant-text(grid2, title, subscation)
+  div(class=grid2)
+    .portfolio-modal-content
+      h3 #{title}
+      p #{subsction}
+      if block
+        block
+mixin modal(id)
+  // Modal
+  div.modal.fade(aria-hidden='true', role='dialog', tabindex='-1', id=id)
+    .container-fluid.portfolio-modal
+      a.close.modal-exit(aria-hidden='true', data-dismiss='modal') &times;
+      .row
+        if block
+          block
 #portfolio.section-portfolio
   .container
     .row
       .col-md-12
-        // Modal
-        #portfolioModal_01.modal.fade(aria-hidden="true", role="dialog", tabindex="-1")
-          .container-fluid.portfolio-modal
-            a.close.modal-exit(aria-hidden="true", data-dismiss="modal")  &times;
-            .row
-              .col-md-6
-                .modal-img
-                  img(alt="img", src="images/portfolio/locomo-1.jpg")
-              .col-md-6
-                .portfolio-modal-content
-                  h3 LOCOMO 運動記錄
-                  p Web Site Design
-                  //- a.btn.btn-view-all href="javascript:;"  Live Demo
-        // Modal
-        #portfolioModal_02.modal.fade(aria-hidden="true", role="dialog" tabindex="-1")
-          .container-fluid.portfolio-modal
-            a.close.modal-exit(aria-hidden="true", data-dismiss="modal")  &times;
-            .row
-              .col-md-8
-                .modal-img
-                  img(alt="img", src="images/portfolio/dianjia_logo_mockup.jpg")
-                .modal-img
-                  img(alt="img", src="images/portfolio/dianjia_logo_0.png")
-                .modal-img
-                  img(alt="img", src="images/portfolio/dianjia_logo_1.jpg")
-              .col-md-4
-                .portfolio-modal-content
-                  h3 典珈公司
-                  p  Logo Design
-                  //- a.btn.btn-view-all href="javascript:;"  Live Demo
-        // Modal
-        #portfolioModal_03.modal.fade(aria-hidden="true", role="dialog", tabindex="-1")
-          .container-fluid.portfolio-modal
-            a.close.modal-exit(aria-hidden="true", data-dismiss="modal")  &times;
-            .row
-              .col-md-8
-                .modal-img
-                  img(alt="img", src="images/portfolio/locomo_app_landingpage.jpg")
-              .col-md-4
-                .portfolio-modal-content
-                  h3 LOCOMO 運動記錄
-                  p APP Download Landing Page
-                  a.btn.btn-view-all(href="http://just-hire.me/portfolio/locomo/app/")  Live Demo
+        +modal('portfolioModal_01')
+          +modal-contant-img('col-md-6')
+            +img(filePath+'locomo-1.jpg')
+          +modal-contant-text('col-md-6', 'LOCOMO 運動記錄', 'Web Site Design')
+        +modal('portfolioModal_02')
+          +modal-contant-img('col-md-9')
+            +img(filePath+'retrospect-prospect-poster.png')
+            +img(filePath+'retrospect-prospect-x-stand.png')
+            +img(filePath+'retrospect-prospect-Invitiation.png')
+            +img(filePath+'retrospect-prospect-banner-01.jpg')
+          +modal-contant-text('col-md-3', '國立台灣戲曲學院 2017戲國際學術研討會', 'Graph Design')
+        +modal('portfolioModal_03')
+          +modal-contant-img('col-md-8')
+            +img(filePath+'locomo_app_landingpage.jpg')
+          +modal-contant-text('col-md-4', 'LOCOMO 運動記錄', 'APP Download Landing Page')
+            a.btn.btn-view-all(href='http://just-hire.me/portfolio/locomo/app/') Live Demo
+        +modal('portfolioModal_04')
+          +modal-contant-img('col-md-9')
+            +img(filePath+'bws-lside.jpg')
+          +modal-contant-text('col-md-3', 'BWS', 'Painting')
 
-        // Modal
-        #portfolioModal_04.modal.fade(aria-hidden="true", role="dialog", tabindex="-1")
-          .container-fluid.portfolio-modal
-            a.close.modal-exit(aria-hidden="true", data-dismiss="modal")  &times;
-            .row
-              .col-md-9
-                .modal-img
-                  img(alt="img", src="images/portfolio/bws-lside.jpg")
-              .col-md-3
-                .portfolio-modal-content
-                  h3 BWS
-                  p Painting
-                  //- a.btn.btn-view-all href="http://just-hire.me/portfolio/locomo/app/"  Live Demo
-        // Modal
-        #portfolioModal_05.modal.fade(aria-hidden="true", role="dialog", tabindex="-1")
-          .container-fluid.portfolio-modal
-            a.close.modal-exit(aria-hidden="true", data-dismiss="modal")  &times;
-            .row
-              .col-md-8
-                .modal-img.bg-b
-                  img(alt="img", src="images/portfolio/ndltd_index5-1.jpg")
-                  br
-                  img(alt="img", src="images/portfolio/ndltd_index5-2.jpg")
-                  br
-                  img(alt="img", src="images/portfolio/ndltd_index5-3.jpg")
-                  br
-                  img(alt="img", src="images/portfolio/ndltd_sub4.jpg")
-                  br
-                  img(alt="img", src="images/portfolio/ndltd_index2.gif")
-                  br
-                  img(alt="img", src="images/portfolio/ndltd_index3.gif")
-
-              .col-md-4
-                .portfolio-modal-content
-                  h3 國家圖書館 全國博碩士論文資訊網
-                  p Web Site Design
-                  //- a.btn.btn-view-all href="http://just-hire.me/portfolio/locomo/app/"  Live Demo
-
-        // Modal
-        #portfolioModal_06.modal.fade(aria-hidden="true", role="dialog", tabindex="-1")
-          .container-fluid.portfolio-modal
-            a.close.modal-exit(aria-hidden="true", data-dismiss="modal")  &times;
-            .row
-              .col-md-9
-                .modal-img
-                  img(alt="img", src="images/portfolio/stust_web2.0.jpg")
-              .col-md-3
-                .portfolio-modal-content
-                  h3 南台科技大學圖書館WEB2.0
-                  p Web Site Design
-                  p 由於程式設計師介紹我使用Bootstrap,起初對這樣打包好的開發工具也沒什麼好感，畢竟都習自己寫那麼久了，改變一個工作習慣也怪怪的。
-                  p 隨著專案的進行，越來越了解Bootstrap，也漸漸改觀了，這真是一套超方便懶人開發工具，一直到網站上線。你知道我只用了幾張圖檔嗎?真是少到一個誇張。
-                  //- a.btn.btn-view-all href="http://just-hire.me/portfolio/locomo/app/"  Live Demo
-
-        #portfolioModal_07.modal.fade(aria-hidden="true", role="dialog", tabindex="-1")
-          .container-fluid.portfolio-modal
-            a.close.modal-exit(aria-hidden="true", data-dismiss="modal")  &times;
-            .row
-              .col-md-8
-                .modal-img.bg-b
-                  img(alt="img", src="images/portfolio/ntcpa_b_a4_01.jpg")
-                  br
-                  img(alt="img", src="images/portfolio/ntcpa_b_a4_02.jpg")
-                  br
-                  img(alt="img", src="images/portfolio/ntcpa_b_a4_03.jpg")
-              .col-md-4
-                .portfolio-modal-content
-                  h3 國立台灣戲曲學院附設綜藝團
-                  p Brochure Design
-
+        +modal('portfolioModal_09')
+          +modal-contant-img('col-md-8')
+            +img(filePath+'ndltd_index5-1.jpg')
+            +img(filePath+'ndltd_index5-2.jpg')
+            +img(filePath+'ndltd_index5-3.jpg')
+            +img(filePath+'ndltd_sub4.jpg')
+            +img(filePath+'ndltd_index2.gif')
+            +img(filePath+'ndltd_index3.gif')
+          +modal-contant-text('col-md-4', '國家圖書館 全國博碩士論文資訊網', 'Web Site Design')
+        +modal('portfolioModal_10')
+          +modal-contant-img('col-md-9')
+            +img(filePath+'stust_web2.0.jpg')
+          +modal-contant-text('col-md-3', '南台科技大學圖書館WEB2.0', 'Web Site Design')
+            p 由於程式設計師介紹我使用Bootstrap,起初對這樣打包好的開發工具也沒什麼好感，畢竟都習自己寫那麼久了，改變一個工作習慣也怪怪的。
+            p 隨著專案的進行，越來越了解Bootstrap，也漸漸改觀了，這真是一套超方便懶人開發工具，一直到網站上線。你知道我只用了幾張圖檔嗎?真是少到一個誇張。
+        +modal('portfolioModal_11')
+          +modal-contant-img('col-md-8')
+            +img(filePath+'dianjia_logo_mockup.jpg')
+            +img(filePath+'dianjia_logo_0.png')
+            +img(filePath+'dianjia_logo_1.jpg')
+          +modal-contant-text('col-md-4', '典珈公司', 'Logo Design')
+        +modal('portfolioModal_12')
+          +modal-contant-img('col-md-8')
+            +img(filePath+'ntcpa_b_a4_01.jpg')
+            +img(filePath+'ntcpa_b_a4_02.jpg')
+            +img(filePath+'ntcpa_b_a4_03.jpg')
+          +modal-contant-text('col-md-4', '國立台灣戲曲學院附設綜藝團', 'Brochure Design')
+        +modal('portfolioModal_13')
+          +modal-contant-img('col-md-9')
+            +img(filePath+'ntcpa-2013-poster.png')
+            - for(var cont = 1; cont < 9; cont++)
+              - var nameFile = 'ntcpa-2013-book-p0'
+              - var extendFile = '.png'
+              br
+              img(alt='img', src=filePath+nameFile+cont+extendFile)
+          +modal-contant-text('col-md-3', '國立台灣戲曲學院 2017戲國際學術研討會', 'Graph Design')
         .section-title
           h1.section-heading PORTFOLIO
           h2.section-subheading-nobg 我之於什麼是好設計，就如於同科學家探索世界一般
@@ -125,119 +94,49 @@
           // THE FILTER STYLED FOR MEGAFOLIO
           .tags.filter-nav
             ul
-              li.filter.selected(data-category="cat-all")  ALL
-              li.filter(data-category="cat-one")  WEB DESIGN
-              li.filter(data-category="cat-three")  GRAPHIC DESIGNER
-              li.filter(data-category="cat-two")  ILLUSTRATION
-              //- li.filter.last-child data-category="cat-four"  WEB DESIGN
+              li.filter.selected(data-category='cat-all') ALL
+              li.filter(data-category='cat-one') WEB DESIGN
+              li.filter(data-category='cat-two') PAINTING
+              li.filter(data-category='cat-three') GRAPHIC DESIGN
+              li.filter.last-child(data-category='cat-two') LOGO DESIGN
           .clear
           // The GRID System
           .megafolio-container.light-bg-entries
-            // A GALLERY ENTRY
-            .mega-entry.cat-one.cat-all(data-height="500", data-src="images/portfolio/locomo_cover_01.jpg", data-width="500")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | LOCOMO 運動記錄
-                  .mega-hoversubtitle
-                    | Web Site Design
-                a(data-target="#portfolioModal_01", data-toggle="modal", href="javascript:;")
-                  .mega-hoverview
-            // A GALLERY ENTRY
-            .mega-entry.cat-three.cat-all(data-height="500", data-src="images/portfolio/dianjia_logo_mockup.jpg", data-width="500")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | DainJia ,Co. ltd
-                  .mega-hoversubtitle
-                    | Logo Design
-                a(data-target="#portfolioModal_02", data-toggle="modal", href="javascript:;")
-                  .mega-hoverview
-            // A GALLERY ENTRY
-            .mega-entry.cat-one.cat-all(data-height="500", data-src="images/portfolio/locomo_app_cover.jpg", data-width="500")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | LOCOMO 運動記錄 Landing Page
-                  .mega-hoversubtitle
-                    | Web Design
-                a(data-target="#portfolioModal_03", data-toggle="modal" href="javascript:;")
-                  .mega-hoverview
-            // A GALLERY ENTRY
-            .mega-entry.cat-two.cat-all(data-height="500", data-src="images/portfolio/bws-lside_cover.jpg", data-width="500")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | BWS
-                  .mega-hoversubtitle
-                    | Painting
-                a(data-target="#portfolioModal_04", data-toggle="modal", href="javascript:;")
-                  .mega-hoverview
-            // A GALLERY ENTRY
-            .mega-entry.cat-one.cat-all(data-height="500", data-src="images/portfolio/fitmi_mockup01.jpg", data-width="500")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | FitMi 雲端減重服務 Landing Page
-                  .mega-hoversubtitle
-                    | Web Design
-                a(target="_blank" href="http://just-hire.me/portfolio/fitmi/lp_1/")
-                  .mega-hoverview
-            // A GALLERY ENTRY
-            .mega-entry.cat-one.cat-all(data-height="500", data-src="images/portfolio/fitmi_mockup02.jpg", data-width="500")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | FitMi 雲端減重服務 Landing Page
-                  .mega-hoversubtitle
-                    | Web Design
-                a(target="_blank", href="http://just-hire.me/portfolio/fitmi/lp_2/")
-                  .mega-hoverview
-            // A GALLERY ENTRY
-            .mega-entry.cat-one.cat-all(data-height="500", data-src="images/portfolio/fitmi_mockup03.jpg", data-width="500")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | FitMi 雲端減重服務 Landing Page
-                  .mega-hoversubtitle
-                    | Web Design
-                a(target="_blank" href="http://just-hire.me/portfolio/fitmi/lp_3/")
-                  .mega-hoverview
-            // A GALLERY ENTRY
-            .mega-entry.cat-one.cat-all(data-height="500", data-src="images/portfolio/fitmi_mockup04.jpg", data-width="500")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | FitMi 雲端減重服務 Landing Page
-                  .mega-hoversubtitle
-                    | Web Design
-                a(target="_blank" href="http://just-hire.me/portfolio/fitmi/lp_4/")
-                  .mega-hoverview
-            // A GALLERY ENTRY
-            .mega-entry.cat-one.cat-all(data-height="500", data-src="images/portfolio/ndltd_indexc_cover.jpg", data-width="500")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | 國家圖書館 全國博碩士論文資訊網
-                  .mega-hoversubtitle
-                    | Web Site Design Proposal
-                a(data-target="#portfolioModal_05", data-toggle="modal" href="javascript:;")
-                  .mega-hoverview
-            .mega-entry.cat-one.cat-all(data-height="500", data-src="images/portfolio/stust_web2.0.jpg", data-width="500")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | 南台科技大學圖書館WEB2.0
-                  .mega-hoversubtitle
-                    | Web Site Design
-                a(data-target="#portfolioModal_06", data-toggle="modal", href="javascript:;")
-                  .mega-hoverview
-            // A GALLERY ENTRY
-            .mega-entry.cat-four.cat-all(data-height="500", data-src="images/portfolio/cover.jpg", data-width="500")
+            // GALLERY ENTRY
+            mixin gallery-entry(cat, src, width, title, subtitle, target, href='javascript:;')
+              .mega-entry.cat-all(class=cat, data-height='500', data-src=src, data-width=width)
+                .mega-hover.alone
+                  .mega-hovertitle
+                    | #{title}
+                    .mega-hoversubtitle
+                      | #{subtitle}
+                  if block
+                    block
+                  else
+                    a(data-target=target, data-toggle='modal', href=href)
+                      .mega-hoverview
+            +gallery-entry('cat-one', filePath+'locomo_cover_01.jpg', '500', 'LOCOMO 運動記錄', 'Web Site Design', '#portfolioModal_01')
+            +gallery-entry('cat-three', filePath+'ntcpa-2013-cover.png', '625', '國立台灣戲曲學院 招生', 'Graphic Designer', '#portfolioModal_02')
+            +gallery-entry('cat-one', filePath+'locomo_app_cover.jpg', '500', 'LOCOMO 運動記錄 Landing Page', 'Web Design', '#portfolioModal_03')
+            +gallery-entry('cat-two', filePath+'bws-lside_cover.jpg', '500', 'BWS', 'Painting', '#portfolioModal_04')
+            +gallery-entry('cat-one', filePath+'fitmi_mockup01.jpg', '500', 'FitMi 雲端減重服務 Landing Page', 'Web Design', 'javascript:;')
+              +demo('http://just-hire.me/portfolio/fitmi/lp_1/')
+            +gallery-entry('cat-one', filePath+'fitmi_mockup02.jpg', '500', 'FitMi 雲端減重服務 Landing Page', 'Web Design', 'javascript:;')
+              +demo('http://just-hire.me/portfolio/fitmi/lp_2/')
+            +gallery-entry('cat-one', filePath+'fitmi_mockup03.jpg', '500', 'FitMi 雲端減重服務 Landing Page', 'Web Design', 'javascript:;')
+              +demo('http://just-hire.me/portfolio/fitmi/lp_3/')
+            +gallery-entry('cat-one', filePath+'fitmi_mockup04.jpg', '500', 'FitMi 雲端減重服務 Landing Page', 'Web Design', 'javascript:;')
+              +demo('http://just-hire.me/portfolio/fitmi/lp_4/')
+            +gallery-entry('cat-one', filePath+'ndltd_indexc_cover.jpg', '500', '國家圖書館 全國博碩士論文資訊網', 'Web Site Design Proposal', '#portfolioModal_09')
+            +gallery-entry('cat-one', filePath+'stust_web2.0.jpg', '500', '南台科技大學圖書館 WEB2.0', 'Web Site Design', '#portfolioModal_10')
+            +gallery-entry('cat-fore', filePath+'dianjia_logo_mockup.jpg', '500', 'DainJia ,Co. ltd', 'Logo Design', '#portfolioModal_11')
+            +gallery-entry('cat-three', filePath+'ntcpa_b_a4_cover.jpg', '625', '國立台灣戲曲學院附設綜藝團', 'Graphic Designer', '#portfolioModal_12')
+            +gallery-entry('cat-three', filePath+'retrospect-prospect-cover.png', '625', '國立台灣戲曲學院 國際研討會', 'Graphic Designer', '#portfolioModal_13')
+            .mega-entry.cat-four.cat-all(data-height='500', data-src='images/portfolio/cover.jpg', data-width='500')
               .mega-hover.alone
                 .mega-hovertitle
                   | More...
-                  //- .mega-hoversubtitle
-                  //-   | Category
-                a(target="_blank", href="http://www.junnnnj.com/blog/#portfolio")
-                  .mega-hoverview
-            // A GALLERY ENTRY
-            .mega-entry.cat-three.cat-all(data-height="500", data-src="images/portfolio/ntcpa_b_a4_cover.jpg", data-width="625")
-              .mega-hover.alone
-                .mega-hovertitle
-                  | 國立台灣戲曲學院附設綜藝團
                   .mega-hoversubtitle
-                    | Brochure Design
-                  .mega-hoverview
-                a(data-target="#portfolioModal_07", data-toggle="modal", href="javascript:;")
+                    | Category
+                a(target='_blank', href='http://www.junnnnj.com/blog/#portfolio')
                   .mega-hoverview
